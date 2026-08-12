@@ -1,2 +1,105 @@
 <!DOCTYPE html>
-Building in progress
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Projects — Alexis Carella" />
+    <meta name="author" content="Alexis Carella" />
+    <title>Projects — Alexis Carella</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <style>
+        .project-card { margin-bottom: 2rem; }
+        .project-card h3 { margin-bottom: 0.25rem; }
+        .project-card .subheading { font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .project-card ul { margin-top: 0.5rem; }
+    </style>
+</head>
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="../index.html">
+            <span class="d-block d-lg-none">Alexis Carella</span>
+            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="../assets/img/profile.png" alt="..." /></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">← Back to CV</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid p-0">
+        <section class="resume-section" id="projects">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Projects</h2>
+
+                <div class="project-card">
+                    <h3>This Resume</h3>
+                    <div class="subheading text-primary">GitHub Pages · Start Bootstrap Theme</div>
+                    <p>My personal CV and portfolio website, built with the Start Bootstrap Resume theme and hosted on GitHub Pages. Continuously updated as my career evolves.</p>
+                    <p><a href="https://github.com/Alexis-DevOps/resume" target="_blank"><i class="fab fa-github"></i> github.com/Alexis-DevOps/resume</a></p>
+                </div>
+
+                <hr class="m-0 mb-4" />
+
+                <div class="project-card">
+                    <h3>Infrastructure &amp; Platform Engineering</h3>
+                    <div class="subheading text-primary">Feel Mining — Production Kubernetes</div>
+                    <p>Migration of the entire production infrastructure from OVH Public Cloud to Scaleway Kapsule (2024), including Kubernetes clusters, databases, and associated services. GitOps-driven with ArgoCD, Kustomize, and Sealed Secrets across 7+ namespaces.</p>
+                </div>
+
+                <hr class="m-0 mb-4" />
+
+                <div class="project-card">
+                    <h3>Observability Stack</h3>
+                    <div class="subheading text-primary">VictoriaMetrics · Prometheus · Grafana · Loki · OpenTelemetry</div>
+                    <p>Designed and deployed a full observability pipeline: metrics collection with VictoriaMetrics and Prometheus, visualisation and alerting with Grafana / VMAlert → Teams, log aggregation with OpenTelemetry and Loki for Laravel applications, and SMS alerting via Cloudflare Workers.</p>
+                </div>
+
+                <hr class="m-0 mb-4" />
+
+                <div class="project-card">
+                    <h3>Cloudflare Workers Integrations</h3>
+                    <div class="subheading text-primary">JavaScript · Webhooks · Banking API</div>
+                    <p>Built Cloudflare Workers for webhook orchestration and alerting bridges used in financial services and infrastructure monitoring.</p>
+                </div>
+
+                <hr class="m-0 mb-4" />
+
+                <div class="project-card">
+                    <h3>GDPR Anonymisation Pipeline</h3>
+                    <div class="subheading text-primary">PostgreSQL · Automation</div>
+                    <p>Automated GDPR data anonymisation pipeline for production databases, ensuring compliance with data protection regulations while maintaining data utility for development and testing environments.</p>
+                </div>
+
+                <hr class="m-0 mb-4" />
+
+                <div class="project-card">
+                    <h3>FinOps Optimisation Studies</h3>
+                    <div class="subheading text-primary">Cloud Cost Optimisation · 2025 · 2026</div>
+                    <p>Conducted two cloud cost optimisation studies covering right-sizing, reserved instance purchasing, and resource consolidation, resulting in measurable infrastructure cost reductions.</p>
+                </div>
+
+                <hr class="m-0 mb-4" />
+
+                <div class="project-card">
+                    <h3>School &amp; Personal Projects</h3>
+                    <div class="subheading text-primary">CPE Lyon · Université Grenoble Alpes</div>
+                    <p>Various academic projects in:</p>
+                    <ul>
+                        <li><strong>Robotics:</strong> ROS2 and CAN bus interaction in C</li>
+                        <li><strong>Networking:</strong> Enterprise Wi-Fi (EAPoL / RADIUS), Cisco/HP switch and router configuration</li>
+                        <li><strong>Development:</strong> C, C++, Python, Java, PHP, Spring</li>
+                        <li><strong>DevOps:</strong> GitHub Actions, Ansible, CI/CD pipelines</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
