@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Alexis Carella — Platform / DevOps Engineer. Production Kubernetes, observability, and regulated financial infrastructure (ISO 27001 / DORA / MiCA)." />
+        <meta name="author" content="Alexis Carella" />
+        <title>Alexis Carella - Platform / DevOps Engineer - CV</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <link href="css/cv.css" rel="stylesheet" />
+
+        <!--
+        ==========================================================================
+        cv.html — ATS-optimised CV. Standalone.
+        --------------------------------------------------------------------------
+        This file is INDEPENDENT of index.html: no Bootstrap, no Font Awesome,
+        no scripts.js, and it uses css/cv.css rather than css/styles.css. Nothing
+        here can affect the existing site.
+
+        Files to drop into the project:
+            cv.html          (next to index.html)
+            css/cv.css       (next to css/styles.css)
+
+        If you'd rather keep the stylesheet flat next to cv.html, move it and
+        change the <link> above to href="cv.css". That is the only reference.
+
+        GENERATING THE PDF
+            Chrome -> Ctrl/Cmd+P -> Destination "Save as PDF" -> Paper A4
+            -> Margins "Default" -> UNCHECK "Headers and footers".
+            Name it: Alexis-Carella-CV.pdf   (never "cv.pdf" — recruiters
+            receive dozens of those and yours becomes unfindable)
+
+        WHY THIS LOOKS PLAINER THAN index.html — these are the constraints that
+        make it parse, and each is deliberate:
+            - Single column. Two-column CVs are the single most common cause of
+              scrambled ATS output: parsers read left-to-right across the page
+              and interleave the columns.
+            - No icons. Font Awesome glyphs carry no text, so an icon-only
+              email or phone extracts as nothing at all.
+            - Contact details as plain text, not just link labels.
+            - Standard section headings ("Professional Experience", "Education",
+              "Technical Skills"), which is what parsers pattern-match on.
+            - Real <ul>/<li> bullets, not CSS pseudo-element markers.
+            - No profile photo. Also worth noting: photos invite bias and are
+              discouraged in UK/US/DE applications, though still common in FR.
+
+        HONESTY RULE FOR THIS FILE
+            Every keyword below is backed by something in your history. The
+            highest-value MISSING keywords are present but commented out and
+            marked CONFIRM. Uncomment only what you can defend under technical
+            questioning. Keyword-stuffing an ATS CV wins the screen and loses
+            the interview, which is a worse outcome than not being screened in.
+        ==========================================================================
+        -->
+    </head>
+    <body>
+        <main class="cv">
+
+            <!-- ================= HEADER ================= -->
+            <header class="cv-header">
+                <h1>Alexis Carella</h1>
+                <p class="headline">Platform / DevOps Engineer &middot; Site Reliability Engineer</p>
+                <!--
+                TODO(Alexis): add your phone number. It is the single most important
+                missing field in the original CV — French recruiters call first.
+                Keep the +33 international format; it survives copy/paste into a CRM.
+                -->
+                <p class="contact">
+                    <span>Grenoble, France</span><span class="sep">|</span><span>+33 X XX XX XX XX</span><span class="sep">|</span><span><a href="mailto:carellaalexis@gmail.com">carellaalexis@gmail.com</a></span>
+                </p>
+                <p class="contact">
+                    <span><a href="https://www.linkedin.com/in/alexis-carella-ba51751ba/">linkedin.com/in/alexis-carella-ba51751ba</a></span><span class="sep">|</span><span><a href="https://github.com/Alexis-DevOps">github.com/Alexis-DevOps</a></span>
+                </p>
+            </header>
+
+            <!-- ================= SUMMARY ================= -->
+            <section id="summary">
+                <h2>Professional Summary</h2>
+                <p class="summary">
+                    Platform and DevOps engineer specialising in <strong>production Kubernetes</strong> and
+                    <strong>regulated financial infrastructure</strong>. I run the platform behind a licensed
+                    crypto-asset business: GitOps delivery, end-to-end observability, incident response, and the
+                    operational evidence base for <strong>ISO 27001</strong> certification under the
+                    <strong>DORA</strong> and <strong>MiCA</strong> regulatory frameworks. Background in systems and
+                    networking, from bare-metal and Linux administration through to managed Kubernetes,
+                    Infrastructure as Code, and cloud cost optimisation.
+                </p>
+                <p class="summary">
+                    <!--
+                    TODO(Alexis): confirm this sentence, it is the one a recruiter reads hardest.
+                    It assumes Feel Mining was an apprenticeship (alternance) alongside the CPE Lyon
+                    Master — both start September 2022 — converting to full-time after graduation in
+                    September 2025. If it was a full-time contract throughout, DELETE the parenthetical:
+                    it undersells you. Either way, stating it explicitly stops recruiters guessing from
+                    overlapping dates, which is what silently loses you screens.
+                    -->
+                    4 years operating production infrastructure (3 as an apprentice engineer alongside my
+                    engineering Master's, full-time since 2025). Based in Grenoble, open to <strong>hybrid or
+                    remote</strong> roles across Auvergne-Rhone-Alpes and in remote-first teams.
+                    Certified C1 English.
+                    <!-- TODO(Alexis): add availability if you have a notice period, e.g. "Available from November 2026 (1 month notice)." -->
+                </p>
+            </section>
+
+            <!-- ================= SKILLS =================
+                 Placed high: many ATS weight early content, and a human screener
+                 spends ~7 seconds deciding. Grouped "Label: a, b, c" is the
+                 densest reliably-parsed format.
+            -->
+            <section id="skills">
+                <h2>Technical Skills</h2>
+                <ul class="skills">
+                    <li><span class="label">Containers &amp; Orchestration:</span> Kubernetes, managed Kubernetes (Scaleway Kapsule, EKS/AKS/GKE-equivalent), Docker, container lifecycle management, image standardisation<!-- CONFIRM: , Helm --></li>
+                    <li><span class="label">GitOps &amp; CI/CD:</span> ArgoCD, Kustomize, Sealed Secrets, Git, Bitbucket Pipelines, GitHub Actions, SonarQube, code review, release and rollback procedures<!-- CONFIRM: , GitLab CI, Jenkins --></li>
+                    <li><span class="label">Infrastructure as Code &amp; Automation:</span> Ansible, Bash, declarative configuration management, Infrastructure as Code (IaC)<!-- CONFIRM: , Terraform (modules, remote state) --></li>
+                    <li><span class="label">Observability &amp; SRE:</span> Prometheus, VictoriaMetrics, Grafana, PromQL, VMAlert, OpenTelemetry, Loki, SLI/SLO definition, alerting pipelines, on-call incident response, post-mortems, MTTR reduction</li>
+                    <li><span class="label">Security &amp; Compliance:</span> ISO 27001, DORA, MiCA, GDPR/RGPD, PASSI audit remediation, ISMS (SMSI) evidence, DevSecOps, Trivy, Kubescape, SentinelOne, Zero Trust (Cloudflare Access), Linux hardening, CIS-style benchmarking</li>
+                    <li><span class="label">Cloud:</span> Scaleway, OVHcloud (European / sovereign cloud), AWS (EC2, S3, IAM, CloudWatch), cloud migration, FinOps and cost optimisation</li>
+                    <li><span class="label">Operating Systems &amp; Virtualisation:</span> Linux administration (Debian, Ubuntu), Windows Server, Active Directory, VMware ESXi, Docker Swarm</li>
+                    <li><span class="label">Networking:</span> TCP/IP, routing and switching (Cisco, HP), firewalls, VPN, DNS, load balancing, RADIUS, EAPoL</li>
+                    <li><span class="label">Databases:</span> PostgreSQL (streaming replication), MariaDB (MaxScale proxy), Redis, Valkey, high-availability clusters, backup and restore, SQL</li>
+                    <li><span class="label">Programming:</span> Python, Bash, TypeScript, JavaScript (proficient); PHP, SQL, Go templating (working knowledge); Java, C, C++ (academic)</li>
+                    <li><span class="label">Tooling &amp; Practices:</span> Jira, Jira Service Management, Confluence, technical documentation and runbooks, internal training delivery, AI-assisted operations (Claude Code, MCP integrations)<!-- CONFIRM: , Agile / Scrum --></li>
+                </ul>
+                <!--
+                CONFIRM markers above are the four highest-value keywords absent from your
+                real experience, ranked by how often they appeared in Auvergne-Rhone-Alpes
+                postings:
+                  1. Terraform  — most-requested IaC tool in the region by a wide margin.
+                                  Note that Kustomize is Kubernetes manifest configuration,
+                                  not IaC in the Terraform sense; expect that probe.
+                  2. Helm       — you use Kustomize; ads ask for Helm far more often.
+                  3. GitLab CI  — heavily used in French enterprises and ESNs.
+                  4. Agile/Scrum— near-universal in French ads. If you work in sprints at
+                                  Feel Mining this is a free, truthful match: uncomment it.
+                The Projects section below is the clean route to the first three: build
+                something real with them, then list the keyword honestly.
+                -->
+            </section>
+
+            <!-- ================= EXPERIENCE ================= -->
+            <section id="experience">
+                <h2>Professional Experience</h2>
+
+                <div class="entry">
+                    <h3>Platform / System Engineer</h3>
+                    <p class="meta">Feel Mining &mdash; regulated crypto-asset services (DORA / MiCA) | Auvergne-Rhone-Alpes, France | September 2022 - Present</p>
+                    <!--
+                    TODO(Alexis): "Sole platform engineer" below — adjust if you work in a team of
+                    two or three. If you genuinely are the only one, keep it: it is your strongest
+                    scope signal and it explains the unusual breadth of the bullets that follow.
+                    -->
+                    <p class="context">Sole platform engineer for a licensed financial-services platform: 7+ Kubernetes namespaces across dev, staging, preprod and production; two cloud migrations; and the operational evidence base for ISO 27001 certification.</p>
+                    <ul>
+                        <li><strong>Security and compliance in a regulated environment:</strong> contributed to <strong>ISO 27001</strong> certification and produced availability and incident evidence for the ISMS (SMSI) under the <strong>DORA</strong> and <strong>MiCA</strong> frameworks. Delivered PASSI audit remediation, vulnerability management (SentinelOne), cluster scanning (Trivy, Kubescape), Zero Trust back-office access (Cloudflare Access), Linux server hardening, and a script-signing policy.</li>
+                        <li><strong>Kubernetes platform engineering:</strong> drove the production migration to <strong>Kubernetes</strong> (2022) and the infrastructure migration from OVH Public Cloud to Scaleway (2024). Onboarded multiple products onto managed Kubernetes across 7+ namespaces, with <strong>GitOps</strong> delivery via <strong>ArgoCD</strong>, <strong>Kustomize</strong> overlays per environment, Sealed Secrets, and documented rollback procedures.
+                            <!--
+                            TODO(Alexis): I softened "Led the production migration" to "drove". Restore
+                            "Led" if you owned it end-to-end (scoping, technology choice, execution) — but
+                            be ready to walk an interviewer through those decisions, because a 2022 date
+                            against a first-year apprentice draws scrutiny.
+                            -->
+                        </li>
+                        <li><strong>Observability and reliability:</strong> built an end-to-end stack on <strong>VictoriaMetrics</strong>, <strong>Prometheus</strong> and <strong>Grafana</strong>, with VMAlert routed to Microsoft Teams, an <strong>OpenTelemetry</strong> and <strong>Loki</strong> log pipeline for Laravel applications, SMS escalation via Cloudflare Workers, PromQL-based cron monitoring, uptime dashboards and <strong>SLI/SLO</strong> tracking, plus a formalised weekly log-review process.</li>
+                        <li><strong>Incident management:</strong> on-call response and blameless <strong>post-mortems</strong> for production incidents including a CoreDNS dual failure, a Redis single point of failure, Scaleway infrastructure outages and application-level degradation, reducing repeat incidents and MTTR through tracked remediation.
+                            <!-- TODO(Alexis): if you are in a formal rotation, write "participation in on-call rotation (astreinte)" — French ads name astreinte explicitly. -->
+                        </li>
+                        <li><strong>Databases and data protection:</strong> configured PostgreSQL streaming replication, an automated <strong>GDPR/RGPD</strong> anonymisation pipeline, a MariaDB MaxScale proxy architecture, Redis and Valkey high-availability clusters, and custom permission-repair tooling.</li>
+                        <li><strong>CI/CD and automation:</strong> managed pipelines on Bitbucket Pipelines, deployed SonarQube for static analysis, wrote Bash hardening and operational scripts, and defined a Docker image unification roadmap.</li>
+                        <li><strong>FinOps:</strong> led two cloud cost-optimisation studies (2025, 2026) covering right-sizing, reserved instances and resource consolidation.</li>
+                        <li><strong>Software engineering:</strong> built Cloudflare Workers (JavaScript) for webhook orchestration and alerting bridges in a financial-services context; authored Go templating for alerting and dashboard definitions.</li>
+                        <li><strong>Documentation and enablement:</strong> authored 100+ Confluence pages (runbooks, onboarding guides, development workflow, Jira Service Management configuration) and ran internal DevOps training. Introduced AI-assisted operations: Claude Code skills, MCP integrations with Grafana and Atlassian, AI-assisted log analysis.</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <h3>Software Engineer Intern</h3>
+                    <!--
+                    TODO(Alexis): the label below exists to resolve the date overlap with Feel Mining.
+                    Recruiters DO spot two concurrent roles and read it as a CV error. Replace with
+                    whatever is accurate (international placement required by CPE Lyon / summer
+                    internship with the apprenticeship suspended). Do not leave it unexplained.
+                    -->
+                    <p class="meta">Candi Solar &mdash; international placement (CPE Lyon curriculum) | June 2024 - September 2024</p>
+                    <ul>
+                        <li>Maintained and extended production services in <strong>TypeScript</strong> and <strong>Python</strong>, working to the team's code quality and review standards.</li>
+                        <li>Maintained DevOps infrastructure and built new <strong>CI/CD</strong> pipelines to streamline the development workflow.</li>
+                        <li>Monitored and maintained <strong>AWS</strong> services (EC2, S3, IAM, CloudWatch).
+                            <!--
+                            TODO(Alexis): trim to the AWS services you genuinely touched. This is your only
+                            AWS line, so it will attract questions — four months of precise, defensible
+                            exposure reads far better than a broad claim you cannot support.
+                            -->
+                        </li>
+                        <li>Supported business teams in deploying and adopting new internal tools and services.</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <h3>Independent Advisor &mdash; Windows 10 Expert</h3>
+                    <p class="meta">Directly (Microsoft Support) | Remote | October 2020 - April 2021</p>
+                    <ul>
+                        <li>Delivered advanced Windows 10 troubleshooting and end-user support in a remote environment, working to support SLAs.</li>
+                        <li>Diagnosed complex system, network and application issues.</li>
+                        <li>Documented solutions and contributed to the knowledge base for recurring issues.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ================= PROJECTS ================= -->
+            <section id="projects">
+                <h2>Projects</h2>
+                <!--
+                TODO(Alexis): fill this in or delete the section entirely — placeholder text in a
+                submitted CV is worse than no section. It is high-value for a platform engineer,
+                and it is the honest route to the Terraform / Helm / GitLab CI keywords above:
+                build something real with them and the keyword becomes true.
+                Keep to 2-3 entries. Each: what it does, the stack, the outcome, a link.
+                -->
+                <div class="entry">
+                    <h3>Project name</h3>
+                    <p class="meta">Stack: tool, tool, tool | 2026 | github.com/Alexis-DevOps/repo</p>
+                    <ul>
+                        <li>What it does and the problem it solves.</li>
+                        <li>What you built, and the measurable outcome or the thing you learned.</li>
+                    </ul>
+                </div>
+                <div class="entry">
+                    <h3>Self-hosted homelab infrastructure</h3>
+                    <p class="meta">Stack: tool, tool, tool | Ongoing</p>
+                    <!-- e.g. Proxmox / k3s / Ansible / Traefik / Terraform — list only what you actually run. -->
+
+                    <ul>
+                        <li>Describe the setup and the services you run on it.</li>
+                        <li>Call out what you practise here that you cannot demonstrate from work.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ================= EDUCATION ================= -->
+            <section id="education">
+                <h2>Education</h2>
+
+                <div class="entry">
+                    <h3>Diplome d'Ingenieur (Master of Engineering), Computer Science and Communication Networks</h3>
+                    <!--
+                    TODO(Alexis): if this was an apprenticeship track, append
+                    " - formation par apprentissage (in partnership with Feel Mining)" to the line
+                    below. It resolves the concurrent dates AND reframes three years as real
+                    production experience rather than coursework.
+                    -->
+                    <p class="meta">CPE Lyon | Lyon, France | September 2022 - September 2025</p>
+                    <ul>
+                        <li>Systems, application and network security; DevOps (CI/CD pipelines, GitHub Actions, Ansible).</li>
+                        <li>Object-oriented programming (C, C++, Python, PHP, Java); web development (JavaScript, PHP, Spring).</li>
+                        <li>Robotics and embedded programming (ROS2, CAN bus in C).</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <h3>DUT Networking and Telecommunications</h3>
+                    <p class="meta">Universite Grenoble Alpes | Grenoble, France | September 2020 - July 2022</p>
+                    <ul>
+                        <li>Linux and Windows Server system administration; virtualisation (VMware ESXi, Docker, Docker Swarm).</li>
+                        <li>Network configuration and routing (Cisco, HP); enterprise Wi-Fi with EAPoL and RADIUS authentication.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ================= CERTIFICATIONS ================= -->
+            <section id="certifications">
+                <h2>Certifications</h2>
+                <ul>
+                    <li>Cambridge English Certificate &mdash; Advanced (CAE), level C1</li>
+                    <!--
+                    TODO(Alexis): this is your thinnest section. Highest-leverage addition is the
+                    CKA (Certified Kubernetes Administrator): you already do the work daily, and it
+                    converts apprenticeship-era experience into an objective credential that
+                    sidesteps the "years since graduation" filter entirely. HashiCorp Terraform
+                    Associate would close your largest keyword gap at the same time.
+                    Listing a dated target is legitimate and shows intent — but only if you mean it.
+                    Delete the line below otherwise.
+                    -->
+                    <li>CKA &mdash; Certified Kubernetes Administrator (in progress, targeted Q_ 20__)</li>
+                </ul>
+            </section>
+
+            <!-- ================= LANGUAGES ================= -->
+            <section id="languages">
+                <h2>Languages</h2>
+                <ul>
+                    <li><strong>French</strong> &mdash; native</li>
+                    <li><strong>English</strong> &mdash; C1, certified (Cambridge CAE). Comfortable working in English: documentation, incident calls, code review.</li>
+                    <!--
+                    TODO(Alexis): add any others. "Anglais professionnel" is an explicit requirement in
+                    nearly every posting reviewed, so a certified C1 earns its own section rather than
+                    sitting buried under Certifications as it did originally.
+                    -->
+                </ul>
+            </section>
+
+            <!--
+            NOTE: the Interests section from index.html is deliberately omitted here.
+            It humanises the website, but on an ATS CV it consumes space that keywords
+            and outcomes should occupy. Keep it on the site; leave it off the CV.
+            -->
+
+        </main>
+    </body>
+</html>
