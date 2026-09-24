@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "description": "Alexis Carella - Ingénieur DevOps / Platform Engineer. Kubernetes, observabilité, sécurité (ISO 27001 / DORA / MiCA), GitOps, FinOps.",
+    "title": "CV - Alexis Carella"
+  },
+  "nav": {
+    "items": [
+      { "id": "about", "label": "À propos" },
+      { "id": "experience", "label": "Expérience" },
+      { "id": "education", "label": "Formation" },
+      { "id": "skills", "label": "Compétences" },
+      { "id": "interests", "label": "Centres d'intérêt" },
+      { "id": "certifications", "label": "Certifications" },
+      { "id": "projects", "label": "Projets" }
+    ]
+  },
+  "about": {
+    "firstName": "Alexis",
+    "lastName": "Carella",
+    "location": "Grenoble - France",
+    "email": "carellaalexis@gmail.com",
+    "bio": "Ingénieur DevOps / Platform Engineer - De l'administration système et du bare-metal à l'ingénierie de plateforme Kubernetes, l'observabilité et la conformité réglementaire (ISO 27001 / DORA / MiCA).",
+    "linkedin": "https://www.linkedin.com/in/alexis-carella-ba51751ba/",
+    "github": "https://github.com/Alexis-DevOps"
+  },
+  "experience": [
+    {
+      "title": "Ingénieur Plateforme / Système",
+      "company": "Feel Mining - Infrastructure crypto-mining régulée",
+      "period": "Septembre 2022 - Aujourd'hui",
+      "bullets": [
+        "<strong>Ingénierie de plateforme Kubernetes :</strong> Migration de l'infrastructure de production d'OVH Public Cloud vers Scaleway (2024), migration de la production vers Kubernetes (2022), onboarding de multiples produits sur Scaleway Kapsule dans 7+ espaces de nommage. GitOps avec ArgoCD, Kustomize (dev/staging/preprod/prod), Sealed Secrets et procédures de rollback documentées.",
+        "<strong>Observabilité de bout en bout :</strong> Stack VictoriaMetrics / Prometheus / Grafana, alerting VMAlert vers Microsoft Teams, pipeline OpenTelemetry + Loki pour les logs d'applications Laravel, alerting SMS via Cloudflare Workers, monitoring cron avec PromQL, dashboards de disponibilité et revue hebdomadaire des logs avec checklist formalisée.",
+        "<strong>Sécurité & Conformité (Contexte régulé) :</strong> Contribution à la certification ISO 27001, remediation d'audit PASSI, gestion des vulnérabilités avec SentinelOne, scan de clusters Trivy/Kubescape, accès Zero Trust aux back-offices (Cloudflare Access), durcissement de serveurs, politique de signature de scripts - le tout dans le cadre réglementaire DORA / MiCA.",
+        "<strong>Gestion d'incidents & SRE :</strong> Rédaction de post-mortems (double défaillance CoreDNS, SPOF Redis, incidents d'infrastructure Scaleway, pannes applicatives), production de rapports de disponibilité pour l'ISMS (SMSI) sous ISO 27001 / DORA / MiCA.",
+        "<strong>Bases de données :</strong> Configuration de réplication PostgreSQL, pipeline d'anonymisation RGPD automatisé, architecture proxy MariaDB MaxScale, clusters haute disponibilité Redis / Valkey, outils de réparation de permissions.",
+        "<strong>FinOps :</strong> Pilotage de 2 études d'optimisation des coûts cloud (2025, 2026) couvrant le right-sizing, les instances réservées et la consolidation des ressources.",
+        "<strong>Génie logiciel :</strong> Cloudflare Workers (JS) - orchestration de webhooks et ponts d'alerting pour les services financiers ; PromQL / Go templating ; scripts de durcissement en Bash ; gestion de pipelines CI (Bitbucket runners) ; déploiement SonarQube ; feuille de route d'unification d'images Docker.",
+        "<strong>Documentation & Gestion des connaissances :</strong> Rédaction de 100+ pages Confluence (runbooks, guides d'onboarding, documentation de workflow de dev, configuration JSM, sessions de formation DevOps internes). Adoption d'outils IA modernes : Claude Code skills, intégrations MCP (Grafana, Atlassian), workflows d'analyse de logs assistée par IA."
+      ]
+    },
+    {
+      "title": "Stagiaire Ingénieur Logiciel",
+      "company": "Candi Solar",
+      "period": "Juin 2024 - Septembre 2024",
+      "bullets": [
+        "Maintenance logicielle et implémentation de nouvelles fonctionnalités en TypeScript et Python, garantissant la qualité du code, l'évolutivité et le respect des bonnes pratiques.",
+        "Maintenance de l'infrastructure DevOps et déploiement de nouveaux pipelines CI/CD pour améliorer le workflow de développement.",
+        "Surveillance et maintenance des services AWS de Candi.",
+        "Assistance aux différentes divisions métier dans le déploiement de nouveaux outils et services."
+      ]
+    },
+    {
+      "title": "Conseiller Indépendant - Expert Windows 10",
+      "company": "Directly - Support Microsoft",
+      "period": "Octobre 2020 - Avril 2021",
+      "bullets": [
+        "Support avancé Windows 10 et dépannage pour utilisateurs finaux.",
+        "Diagnostic de problèmes complexes système, réseau et applicatifs en environnement de support à distance.",
+        "Documentation des solutions et contribution à la base de connaissances pour les problèmes récurrents."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "CPE Lyon",
+      "degree": "Master en Ingénierie",
+      "detail": "Diplôme d'Ingénieur en Informatique et Réseaux de Communication",
+      "period": "Septembre 2022 - Septembre 2025",
+      "bullets": [
+        "Programmation orientée objet : C, C++, Python, PHP, Java",
+        "Sécurité des systèmes, applications et réseaux",
+        "Développement web (JS, PHP, Spring)",
+        "Robotique et programmation embarquée : ROS2, interaction bus CAN en C",
+        "DevOps : GitHub Actions, Ansible, pipelines CI/CD"
+      ]
+    },
+    {
+      "school": "Université Grenoble Alpes",
+      "degree": "DUT Réseaux et Télécommunications",
+      "detail": "Diplôme universitaire en Réseaux et Télécommunications",
+      "period": "Septembre 2020 - Juillet 2022",
+      "bullets": [
+        "Administration système Linux et Windows Server",
+        "Virtualisation : VMware ESXi, Docker, Docker Swarm",
+        "Configuration réseau et routage (Cisco, HP switches et routeurs)",
+        "Wi-Fi d'entreprise : EAPoL, authentification RADIUS"
+      ]
+    }
+  ],
+  "formations": [
+    {
+      "title": "DevOps CI/CD avec Docker et Github Actions",
+      "provider": "Takima",
+      "detail": "Formation de 3 jours sur les pratiques DevOps, les conteneurs Docker et les pipelines CI/CD avec GitHub Actions.",
+      "period": "Février 2024",
+      "url": "https://formation.takima.fr/formations/devops-ci-cd-docker-github-actions"
+    },
+    {
+      "title": "Architecture, Scalabilité et Performance - Culture DevOps",
+      "provider": "Zenika",
+      "detail": "Formation de 3 jours couvrant l'architecture, la scalabilité et la performance, la culture et l'organisation, le déploiement, l'orchestration et la résilience, l'observabilité et le monitoring, l'AIops, les tests automatisés et la qualité - avec un focus sur l'observabilité et OpenTelemetry. Atelier pratique de mise en place d'OpenTelemetry suivi en entreprise du déploiement de métriques sur les produits en production.",
+      "period": "Octobre 2025"
+    }
+  ],
+  "skills": {
+    "groups": [
+      {
+        "title": "Platform Engineering & Kubernetes",
+        "items": ["Kubernetes (Scaleway Kapsule), ArgoCD, Kustomize, Sealed Secrets, GitOps", "Docker, cycle de vie des conteneurs, unification d'images", "Migration cloud : OVH vers Scaleway"]
+      },
+      {
+        "title": "Observabilité & Monitoring",
+        "items": ["VictoriaMetrics, Prometheus, Grafana, VMAlert, PromQL", "OpenTelemetry, Loki, pipelines d'alerting (Teams, SMS, Cloudflare Workers)", "Dashboards de disponibilité, suivi SLO, processus de revue de logs"]
+      },
+      {
+        "title": "Sécurité & Conformité",
+        "items": ["ISO 27001, DORA, MiCA - environnement régulé", "Remédiation d'audit PASSI, gestion des vulnérabilités SentinelOne", "Trivy, Kubescape, Zero Trust (Cloudflare Access), durcissement de serveurs"]
+      },
+      {
+        "title": "Bases de données",
+        "items": ["PostgreSQL, MariaDB (proxy MaxScale), Redis / Valkey", "Pipelines d'anonymisation RGPD, réplication, architectures HA"]
+      },
+      {
+        "title": "CI/CD & Automatisation",
+        "items": ["GitHub Actions, Bitbucket Pipelines, GitOps (ArgoCD)", "Ansible, Bash, infrastructure-as-code"]
+      },
+      {
+        "title": "Génie logiciel",
+        "items": ["Python, Go, TypeScript / JavaScript, PHP, Java, C / C++", "Cloudflare Workers, PromQL / Go templating, SonarQube"]
+      },
+      {
+        "title": "IA & Gestion des connaissances",
+        "items": ["Claude Code, intégrations MCP (Grafana, Atlassian)", "Analyse de logs assistée par IA, base de connaissances Confluence (100+ pages)"]
+      },
+      {
+        "title": "Cloud & Infrastructure",
+        "items": ["Scaleway, OVH, AWS", "Linux (Debian, Ubuntu), Windows Server, Active Directory", "Virtualisation : VMware ESXi, Docker"]
+      }
+    ]
+  },
+  "interests": [
+    "Au-delà de l'infrastructure et du platform engineering, je pratique la moto - je roule en Honda CB500X et explore les routes des Alpes françaises et au-delà le week-end et en road trips.",
+    "Je suis également passionné par l'apprentissage continu, explorant régulièrement les nouvelles technologies dans les domaines du DevOps, de la sécurité et de l'IA. Quand je ne suis pas derrière un écran, je profite du plein air, de la randonnée et du cadre de vie montagnard que Grenoble offre."
+  ],
+  "certifications": [
+    {
+      "name": "Cambridge English Certificate - Advanced (CAE), Niveau C1"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Ce CV",
+      "stack": "GitHub Pages - Start Bootstrap Theme",
+      "description": "Mon CV et portfolio personnel, construit avec le thème Start Bootstrap Resume et hébergé sur GitHub Pages. Mis à jour continuellement au fil de ma carrière.",
+      "url": "https://github.com/Alexis-DevOps/resume",
+      "urlLabel": "github.com/Alexis-DevOps/resume"
+    },
+    {
+      "title": "Infrastructure & Platform Engineering",
+      "stack": "Feel Mining - Kubernetes de production",
+      "description": "Migration de l'infrastructure de production complète d'OVH Public Cloud vers Scaleway Kapsule (2024), incluant les clusters Kubernetes, bases de données et services associés. Piloté par GitOps avec ArgoCD, Kustomize et Sealed Secrets dans 7+ espaces de nommage."
+    },
+    {
+      "title": "Stack d'Observabilité",
+      "stack": "VictoriaMetrics - Prometheus - Grafana - Loki - OpenTelemetry",
+      "description": "Conception et déploiement d'un pipeline d'observabilité complet : collecte de métriques avec VictoriaMetrics et Prometheus, visualisation et alerting avec Grafana / VMAlert vers Teams, agrégation de logs avec OpenTelemetry et Loki pour les applications Laravel, et alerting SMS via Cloudflare Workers."
+    },
+    {
+      "title": "Cloudflare Workers Integrations",
+      "stack": "JavaScript - Webhooks - API Bancaire",
+      "description": "Développement de Cloudflare Workers pour l'orchestration de webhooks et les ponts d'alerting utilisés dans les services financiers et la surveillance d'infrastructure."
+    },
+    {
+      "title": "Pipeline d'Anonymisation RGPD",
+      "stack": "PostgreSQL - Automatisation",
+      "description": "Pipeline automatisé d'anonymisation RGPD pour les bases de données de production, garantissant la conformité avec les réglementations sur la protection des données tout en maintenant l'utilité des données pour les environnements de développement et de test."
+    },
+    {
+      "title": "Études d'Optimisation FinOps",
+      "stack": "Optimisation des Coûts Cloud - 2025 - 2026",
+      "description": "Réalisation de deux études d'optimisation des coûts cloud couvrant le right-sizing, l'achat d'instances réservées et la consolidation des ressources, aboutissant à des réductions mesurables des coûts d'infrastructure."
+    },
+    {
+      "title": "Finobot - Robot Chien ROS2 Open Source",
+      "stack": "ROS2 - Python - CMake",
+      "description": "Packages ROS2 open-source pour le robot chien AI Finobot (basé sur Petoi Bittle X). Permet le suivi autonome de personnes, la navigation et la perception robotique. Contribution aux repositories fino_ros2 et fino_ros2_msgs.",
+      "url": "https://github.com/FinoBot",
+      "urlLabel": "github.com/FinoBot"
+    }
+  ]
+}

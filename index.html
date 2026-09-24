@@ -1,225 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Alexis Carella — DevOps / Platform Engineer. Kubernetes, observability, security (ISO 27001 / DORA / MiCA), GitOps, FinOps." />
+        <meta name="description" content="Alexis Carella - DevOps / Platform Engineer. Kubernetes, observability, security (ISO 27001 / DORA / MiCA), GitOps, FinOps." />
         <meta name="author" content="Alexis Carella" />
         <title>CV - Alexis Carella</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+          .lang-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1100;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            letter-spacing: 0.02em;
+          }
+          .lang-toggle:hover {
+            background: rgba(255,255,255,0.3);
+          }
+          @media (max-width: 991.98px) {
+            .lang-toggle {
+              top: 0.6rem;
+              right: 4rem;
+              padding: 0.3rem 0.6rem;
+              font-size: 0.78rem;
+            }
+          }
+          .formation-card {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #dee2e6;
+          }
+          .formation-card:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+          }
+          .formation-card h3 {
+            margin-bottom: 0.25rem;
+          }
+          .project-card h3 { margin-bottom: 0.25rem; }
+          .project-card .subheading { font-size: 0.9rem; margin-bottom: 0.5rem; }
+          .text-loading {
+            opacity: 0.3;
+            transition: opacity 0.3s;
+          }
+          .text-loaded {
+            opacity: 1;
+          }
+        </style>
     </head>
     <body id="page-top">
-        <!-- Navigation-->
+        <button class="lang-toggle" id="langToggle" onclick="switchLanguage()">FR</button>
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Alexis Carella</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.png" alt="..." /></span>
+                <span class="d-block d-lg-none" id="navBrandMobile">Alexis Carella</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.png" alt="" /></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Certifications">Certifications</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="projects">Projects</a></li>
+                <ul class="navbar-nav" id="navList">
                 </ul>
             </div>
         </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
+
+        <div class="container-fluid p-0" id="mainContent">
             <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        Alexis
-                        <span class="text-primary">Carella</span>
-                    </h1>
-                    <div class="subheading mb-5">
-                        Grenoble · France ·
-                        <a href="mailto:carellaalexis@gmail.com">carellaalexis@gmail.com</a>
-                    </div>
-                    <p class="lead mb-5">DevOps / Platform Engineer — From system administration and bare-metal to Kubernetes platform engineering, observability, and regulated compliance (ISO 27001 / DORA / MiCA).</p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="https://www.linkedin.com/in/alexis-carella-ba51751ba/"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="https://github.com/Alexis-DevOps"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
+                <div class="resume-section-content" id="aboutContent"><p class="lead">Loading...</p></div>
             </section>
             <hr class="m-0" />
-            <!-- Experience-->
             <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Platform / System Engineer</h3>
-                            <div class="subheading mb-3">Feel Mining — Regulated crypto‑mining infrastructure</div>
-                            <ul>
-                                <li><strong>Kubernetes Platform Engineering:</strong> Migrated production infrastructure from OVH Public Cloud to Scaleway (2024), led the production migration to Kubernetes (2022), onboarded multiple products on Scaleway Kapsule across 7+ namespaces. GitOps with ArgoCD, Kustomize (dev/staging/preprod/prod), Sealed Secrets, and documented rollback procedures.</li>
-                                <li><strong>End-to-end Observability:</strong> VictoriaMetrics / Prometheus / Grafana stack, VMAlert alerting routed to Microsoft Teams, OpenTelemetry + Loki pipeline for Laravel application logs, SMS alerting via Cloudflare Workers, PromQL-based cron monitoring, uptime dashboards, and weekly log review with a formalised checklist.</li>
-                                <li><strong>Security &amp; Compliance (Regulated Context):</strong> Contributed to ISO 27001 certification, PASSI audit remediation, vulnerability management with SentinelOne, Trivy/Kubescape cluster scanning, Zero Trust back-office access (Cloudflare Access), server hardening, script signing policy — all within the DORA / MiCA regulatory framework.</li>
-                                <li><strong>Incident Management &amp; SRE:</strong> Authored post-mortems (CoreDNS dual failure, Redis SPOF, Scaleway infrastructure incidents, application outages), produced availability reports for ISMS (SMSI) compliance under ISO 27001 / DORA / MiCA.</li>
-                                <li><strong>Databases:</strong> PostgreSQL replication setup, automated GDPR anonymisation pipeline, MariaDB MaxScale proxy architecture, Redis / Valkey high-availability clusters, custom permission repair tooling.</li>
-                                <li><strong>FinOps:</strong> Led 2 cloud cost optimisation studies (2025, 2026) covering right-sizing, reserved instances, and resource consolidation.</li>
-                                <li><strong>Software Engineering:</strong> Cloudflare Workers (JS) — webhook orchestration and alerting bridges for financial services; PromQL / Go templating; bash hardening scripts; CI pipeline management (Bitbucket runners); SonarQube deployment; Docker image unification roadmap.</li>
-                                <li><strong>Documentation &amp; Knowledge Management:</strong> Authored 100+ Confluence pages (runbooks, onboarding guides, dev workflow documentation, JSM configuration, internal DevOps training sessions). Adopted modern AI tools: Claude Code skills, MCP integrations (Grafana, Atlassian), AI-assisted log analysis workflows.</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">September 2022 - Present</span></div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Software Engineer Intern</h3>
-                            <div class="subheading mb-3">Candi Solar</div>
-                                <ul>
-                                    <li>Performed software maintenance and implemented new features using TypeScript and Python, ensuring code quality, scalability, and adherence to best practices.</li>
-                                    <li>DevOps infrastructure maintenance and deployment of new CI/CD pipelines for improved development workflow.</li>
-                                    <li>Monitoring and maintaining Candi's AWS services.</li>
-                                    <li>Assisting various business divisions in deploying new tools and services.</li>
-                                </ul>
-                            </div>
-                        <div class="flex-shrink-0"><span class="text-primary">June 2024 - September 2024</span></div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Independent Advisor — Windows 10 Expert</h3>
-                            <div class="subheading mb-3">Directly — Microsoft Support</div>
-                            <ul>
-                                <li>Provided advanced Windows 10 troubleshooting and support to end-users.</li>
-                                <li>Diagnosed complex system, network, and application issues in a remote support environment.</li>
-                                <li>Documented solutions and contributed to the knowledge base for recurring issues.</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">October 2020 - April 2021</span></div>
-                    </div>
-                </div>
+                <div class="resume-section-content" id="experienceContent"><p class="lead">Loading...</p></div>
             </section>
             <hr class="m-0" />
-            <!-- Education-->
             <section class="resume-section" id="education">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">CPE Lyon</h3>
-                            <div class="subheading mb-3">Master of Engineering</div>
-                            <p>Master of Engineering degree in Computer Science and Communication Networks</p>
-                            <ul>
-                                <li>Object-oriented programming: C, C++, Python, PHP, Java</li>
-                                <li>System, application and network security</li>
-                                <li>Web development (JS, PHP, Spring)</li>
-                                <li>Robotics and embedded programming: ROS2, CAN bus interaction in C</li>
-                                <li>DevOps: GitHub Actions, Ansible, CI/CD pipelines</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">September 2022 - September 2025</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Université Grenoble Alpes</h3>
-                            <div class="subheading mb-3">DUT Networking and Telecommunications</div>
-                            <p>Two-year university degree in Networking and Telecommunications</p>
-                            <ul>
-                                <li>Linux and Windows Server system administration</li>
-                                <li>Virtualisation: VMware ESXi, Docker, Docker Swarm</li>
-                                <li>Network configuration and routing (Cisco, HP switches and routers)</li>
-                                <li>Enterprise Wi-Fi: EAPoL, RADIUS authentication</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">September 2020 - July 2022</span></div>
-                    </div>
-                </div>
+                <div class="resume-section-content" id="educationContent"><p class="lead">Loading...</p></div>
             </section>
             <hr class="m-0" />
-            <!-- Skills-->
             <section class="resume-section" id="skills">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Skills</h2>
-                    <div class="subheading mb-3">Platform Engineering &amp; Kubernetes</div>
-                    <ul>
-                        <li>Kubernetes (Scaleway Kapsule), ArgoCD, Kustomize, Sealed Secrets, GitOps</li>
-                        <li>Docker, container lifecycle, image unification</li>
-                        <li>Cloud migration: OVH → Scaleway</li>
-                    </ul>
-                    <div class="subheading mb-3">Observability &amp; Monitoring</div>
-                    <ul>
-                        <li>VictoriaMetrics, Prometheus, Grafana, VMAlert, PromQL</li>
-                        <li>OpenTelemetry, Loki, alerting pipelines (Teams, SMS, Cloudflare Workers)</li>
-                        <li>Uptime dashboards, SLO tracking, log review processes</li>
-                    </ul>
-                    <div class="subheading mb-3">Security &amp; Compliance</div>
-                    <ul>
-                        <li>ISO 27001, DORA, MiCA — regulated environment</li>
-                        <li>PASSI audit remediation, SentinelOne vulnerability management</li>
-                        <li>Trivy, Kubescape, Zero Trust (Cloudflare Access), server hardening</li>
-                    </ul>
-                    <div class="subheading mb-3">Databases</div>
-                    <ul>
-                        <li>PostgreSQL, MariaDB (MaxScale proxy), Redis / Valkey</li>
-                        <li>GDPR anonymisation pipelines, replication, HA architectures</li>
-                    </ul>
-                    <div class="subheading mb-3">CI/CD &amp; Automation</div>
-                    <ul>
-                        <li>GitHub Actions, Bitbucket Pipelines, GitOps (ArgoCD)</li>
-                        <li>Ansible, Bash, infrastructure-as-code</li>
-                    </ul>
-                    <div class="subheading mb-3">Software Engineering</div>
-                    <ul>
-                        <li>Python, Go, TypeScript / JavaScript, PHP, Java, C / C++</li>
-                        <li>Cloudflare Workers, PromQL / Go templating, SonarQube</li>
-                    </ul>
-                    <div class="subheading mb-3">AI &amp; Knowledge Management</div>
-                    <ul>
-                        <li>Claude Code, MCP integrations (Grafana, Atlassian)</li>
-                        <li>AI-assisted log analysis, Confluence knowledge base (100+ pages)</li>
-                    </ul>
-                    <div class="subheading mb-3">Cloud &amp; Infrastructure</div>
-                    <ul>
-                        <li>Scaleway, OVH, AWS</li>
-                        <li>Linux (Debian, Ubuntu), Windows Server, Active Directory</li>
-                        <li>Virtualisation: VMware ESXi, Docker</li>
-                    </ul>
-                </div>
+                <div class="resume-section-content" id="skillsContent"><p class="lead">Loading...</p></div>
             </section>
             <hr class="m-0" />
-            <!-- Interests-->
             <section class="resume-section" id="interests">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Interests</h2>
-                    <p>Beyond infrastructure and platform engineering, I enjoy motorcycling — I ride a Honda CB500X and explore the roads of the French Alps and beyond on weekends and road trips.</p>
-                    <p class="mb-0">I'm also passionate about continuous learning, regularly exploring new technologies in the DevOps, security, and AI space. When not behind a screen, I enjoy the outdoors, hiking, and the mountain lifestyle that Grenoble offers.</p>
-                </div>
+                <div class="resume-section-content" id="interestsContent"><p class="lead">Loading...</p></div>
             </section>
             <hr class="m-0" />
-            <!-- Certifications-->
-            <section class="resume-section" id="Certifications">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Certifications</h2>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Cambridge English Certificate — Advanced (CAE), C1 Level
-                        </li>
-                    </ul>
-                </div>
+            <section class="resume-section" id="certifications">
+                <div class="resume-section-content" id="certificationsContent"><p class="lead">Loading...</p></div>
+            </section>
+            <hr class="m-0" />
+            <section class="resume-section" id="projects">
+                <div class="resume-section-content" id="projectsContent"><p class="lead">Loading...</p></div>
             </section>
         </div>
-        <!-- Bootstrap core JS-->
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+        let currentLang = 'en';
+        let resumeData = null;
+
+        function detectBrowserLang() {
+            const lang = (navigator.language || navigator.userLanguage || 'en').split('-')[0];
+            return lang === 'fr' ? 'fr' : 'en';
+        }
+
+        function loadJSON(url) {
+            return fetch(url).then(r => {
+                if (!r.ok) throw new Error('Failed to load ' + url);
+                return r.json();
+            });
+        }
+
+        function formatPeriod(period) {
+            return '<span class="text-primary">' + period + '</span>';
+        }
+
+        function switchLanguage() {
+            const next = currentLang === 'en' ? 'fr' : 'en';
+            currentLang = next;
+            document.getElementById('langToggle').textContent = next === 'en' ? 'FR' : 'EN';
+            document.documentElement.lang = next;
+            render();
+            // Collapse navbar on mobile after language switch
+            const toggler = document.querySelector('.navbar-toggler');
+            const collapse = document.getElementById('navbarResponsive');
+            if (toggler && collapse && window.getComputedStyle(toggler).display !== 'none') {
+                const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+                if (bsCollapse) bsCollapse.hide();
+            }
+        }
+
+        function render() {
+            const suffix = currentLang === 'fr' ? '-fr' : '-en';
+            loadJSON('data/resume' + suffix + '.json').then(data => {
+                resumeData = data;
+                document.querySelector('meta[name="description"]').content = data.meta.description;
+                document.title = data.meta.title;
+
+                // Nav
+                const navList = document.getElementById('navList');
+                navList.innerHTML = data.nav.items.map(item =>
+                    '<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#' + item.id + '">' + item.label + '</a></li>'
+                ).join('');
+
+                // About
+                const about = data.about;
+                document.getElementById('aboutContent').innerHTML = `
+                    <h1 class="mb-0">
+                        ${about.firstName}
+                        <span class="text-primary">${about.lastName}</span>
+                    </h1>
+                    <div class="subheading mb-5">
+                        ${about.location} -
+                        <a href="mailto:${about.email}">${about.email}</a>
+                    </div>
+                    <p class="lead mb-5">${about.bio}</p>
+                    <div class="social-icons">
+                        <a class="social-icon" href="${about.linkedin}"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" href="${about.github}"><i class="fab fa-github"></i></a>
+                    </div>
+                `;
+
+                // Experience
+                const expContainer = document.getElementById('experienceContent');
+                expContainer.innerHTML = '<h2 class="mb-5">' + data.nav.items.find(i => i.id === 'experience').label + '</h2>' +
+                    data.experience.map(job =>
+                        '<div class="d-flex flex-column flex-md-row justify-content-between mb-5">' +
+                            '<div class="flex-grow-1">' +
+                                '<h3 class="mb-0">' + job.title + '</h3>' +
+                                '<div class="subheading mb-3">' + job.company + '</div>' +
+                                '<ul>' + job.bullets.map(b => '<li>' + b + '</li>').join('') + '</ul>' +
+                            '</div>' +
+                            '<div class="flex-shrink-0">' + formatPeriod(job.period) + '</div>' +
+                        '</div>'
+                    ).join('');
+
+                // Education
+                const eduContainer = document.getElementById('educationContent');
+                const eduLabel = data.nav.items.find(i => i.id === 'education').label;
+                eduContainer.innerHTML = '<h2 class="mb-5">' + eduLabel + '</h2>' +
+                    data.education.map(edu =>
+                        '<div class="d-flex flex-column flex-md-row justify-content-between mb-5">' +
+                            '<div class="flex-grow-1">' +
+                                '<h3 class="mb-0">' + edu.school + '</h3>' +
+                                '<div class="subheading mb-3">' + edu.degree + '</div>' +
+                                '<p>' + edu.detail + '</p>' +
+                                '<ul>' + edu.bullets.map(b => '<li>' + b + '</li>').join('') + '</ul>' +
+                            '</div>' +
+                            '<div class="flex-shrink-0">' + formatPeriod(edu.period) + '</div>' +
+                        '</div>'
+                    ).join('');
+
+                // Formations
+                if (data.formations && data.formations.length > 0) {
+                    const formLabel = currentLang === 'fr' ? 'Formations professionnelles' : 'Professional Training';
+                    eduContainer.innerHTML +=
+                        '<h3 class="mb-3 mt-4">' + formLabel + '</h3>' +
+                        data.formations.map(f =>
+                            '<div class="formation-card d-flex flex-column flex-md-row justify-content-between">' +
+                                '<div class="flex-grow-1">' +
+                                    '<h3 class="mb-0">' + f.title + '</h3>' +
+                                    '<div class="subheading mb-2">' + f.provider + '</div>' +
+                                    '<p>' + f.detail + (f.url ? ' <a href="' + f.url + '" target="_blank">' + f.url + '</a>' : '') + '</p>' +
+                                '</div>' +
+                                '<div class="flex-shrink-0">' + formatPeriod(f.period) + '</div>' +
+                            '</div>'
+                        ).join('');
+                }
+
+                // Skills
+                const skillsContainer = document.getElementById('skillsContent');
+                const skillsLabel = data.nav.items.find(i => i.id === 'skills').label;
+                skillsContainer.innerHTML = '<h2 class="mb-5">' + skillsLabel + '</h2>' +
+                    data.skills.groups.map(g =>
+                        '<div class="subheading mb-3">' + g.title + '</div>' +
+                        '<ul class="fa-ul mb-4">' +
+                            g.items.map(item => '<li><span class="fa-li"><i class="fas fa-check"></i></span>' + item + '</li>').join('') +
+                        '</ul>'
+                    ).join('');
+
+                // Interests
+                const interestsContainer = document.getElementById('interestsContent');
+                const interestsLabel = data.nav.items.find(i => i.id === 'interests').label;
+                interestsContainer.innerHTML = '<h2 class="mb-5">' + interestsLabel + '</h2>' +
+                    data.interests.map(p => '<p' + (data.interests.indexOf(p) === data.interests.length - 1 ? ' class="mb-0"' : '') + '>' + p + '</p>').join('');
+
+                // Certifications
+                const certContainer = document.getElementById('certificationsContent');
+                const certLabel = data.nav.items.find(i => i.id === 'certifications').label;
+                certContainer.innerHTML = '<h2 class="mb-5">' + certLabel + '</h2>' +
+                    '<ul class="fa-ul mb-0">' +
+                    data.certifications.map(c =>
+                        '<li><span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>' + c.name + '</li>'
+                    ).join('') +
+                    '</ul>';
+
+                // Projects
+                const projectsContainer = document.getElementById('projectsContent');
+                const projectsLabel = data.nav.items.find(i => i.id === 'projects').label;
+                projectsContainer.innerHTML = '<h2 class="mb-5">' + projectsLabel + '</h2>' +
+                    data.projects.map(p =>
+                        '<div class="project-card mb-4">' +
+                            '<h3 class="mb-0">' + p.title + '</h3>' +
+                            '<div class="subheading text-primary mb-2">' + p.stack + '</div>' +
+                            '<p>' + p.description + '</p>' +
+                            (p.url ? '<p><a href="' + p.url + '" target="_blank"><i class="fab fa-github"></i> ' + p.urlLabel + '</a></p>' : '') +
+                        '</div>' +
+                        (data.projects.indexOf(p) < data.projects.length - 1 ? '<hr class="m-0 mb-4" />' : '')
+                    ).join('');
+
+                // ScrollSpy initialization / refresh
+                const sideNav = document.querySelector('#sideNav');
+                if (sideNav) {
+                    const existingSpy = bootstrap.ScrollSpy.getInstance(document.body);
+                    if (existingSpy) {
+                        existingSpy.refresh();
+                    } else {
+                        new bootstrap.ScrollSpy(document.body, {
+                            target: '#sideNav',
+                            rootMargin: '0px 0px -40%',
+                        });
+                    }
+                }
+
+                // Re-bind scroll-trigger clicks
+                document.querySelectorAll('.js-scroll-trigger').forEach(trigger => {
+                    trigger.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
+                });
+            });
+        }
+
+        // Initial render
+        currentLang = detectBrowserLang();
+        document.getElementById('langToggle').textContent = currentLang === 'en' ? 'FR' : 'EN';
+        document.documentElement.lang = currentLang;
+        render();
+        </script>
     </body>
 </html>
