@@ -12,34 +12,6 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <link href="css/styles.css" rel="stylesheet" />
         <style>
-          .lang-toggle {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 1100;
-            background: #bd5d38;
-            border: 1px solid rgba(255,255,255,0.25);
-            color: #fff;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            letter-spacing: 0.02em;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-          }
-          .lang-toggle:hover {
-            background: #a84f2f;
-          }
-          @media (max-width: 991.98px) {
-            .lang-toggle {
-              top: 0.6rem;
-              right: 4rem;
-              padding: 0.3rem 0.6rem;
-              font-size: 0.78rem;
-            }
-          }
           .formation-card {
             margin-top: 1.5rem;
             padding-top: 1.5rem;
@@ -62,10 +34,48 @@
           .text-loaded {
             opacity: 1;
           }
+          .top-actions {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1100;
+            display: flex;
+            gap: 0.5rem;
+          }
+          .top-actions button {
+            background: #bd5d38;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #fff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            letter-spacing: 0.02em;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            line-height: 1;
+          }
+          .top-actions button:hover {
+            background: #a84f2f;
+          }
+          @media (max-width: 991.98px) {
+            .top-actions {
+              top: 0.6rem;
+              right: 4rem;
+            }
+            .top-actions button {
+              padding: 0.3rem 0.6rem;
+              font-size: 0.78rem;
+            }
+          }
         </style>
     </head>
     <body id="page-top">
-        <button class="lang-toggle" id="langToggle" onclick="switchLanguage()">FR</button>
+        <div class="top-actions">
+            <button id="downloadMD" onclick="downloadMD()" title="Download CV as Markdown"><i class="fas fa-download"></i></button>
+            <button id="langToggle" onclick="switchLanguage()">FR</button>
+        </div>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -291,6 +301,95 @@
                     });
                 });
             });
+        }
+
+        function downloadMD() {
+            const d = resumeData;
+            if (!d) return;
+
+            function esc(t) { return t.replace(/\*/g, '\\*').replace(/_/g, '\\_').replace(/`/g, '\\`'); }
+
+            let md = '# ' + d.about.firstName + ' ' + d.about.lastName + '\n\n';
+            md += '**' + d.about.location + '**  \n';
+            md += '<' + d.about.email + '>  \n';
+            md += '[LinkedIn](' + d.about.linkedin + ') | [GitHub](' + d.about.github + ')\n\n';
+            md += d.about.bio + '\n\n---\n\n';
+
+            // Experience
+            const expLabel = d.nav.items.find(i => i.id === 'experience').label;
+            md += '## ' + expLabel + '\n\n';
+            d.experience.forEach(job => {
+                md += '### ' + job.title + '\n\n';
+                md += '**' + job.company + '**  \n';
+                md += job.period + '\n\n';
+                job.bullets.forEach(b => {
+                    const clean = b.replace(/<\/?strong>/g, '**').replace(/<\/?[^>]+>/g, '');
+                    md += '- ' + clean + '\n';
+                });
+                md += '\n';
+            });
+
+            // Education
+            const eduLabel = d.nav.items.find(i => i.id === 'education').label;
+            md += '---\n\n## ' + eduLabel + '\n\n';
+            d.education.forEach(edu => {
+                md += '### ' + edu.school + '\n\n';
+                md += '**' + edu.degree + '**  \n';
+                md += edu.detail + '  \n';
+                md += edu.period + '\n\n';
+                edu.bullets.forEach(b => md += '- ' + b + '\n');
+                md += '\n';
+            });
+
+            // Formations
+            if (d.formations && d.formations.length > 0) {
+                const formLabel = currentLang === 'fr' ? 'Formations professionnelles' : 'Professional Training';
+                md += '### ' + formLabel + '\n\n';
+                d.formations.forEach(f => {
+                    md += '**' + f.title + '**  \n';
+                    md += f.provider + '  \n';
+                    md += f.detail + '  \n';
+                    md += f.period + '\n';
+                    if (f.url) md += '<' + f.url + '>\n';
+                    md += '\n';
+                });
+            }
+
+            // Skills
+            const skillsLabel = d.nav.items.find(i => i.id === 'skills').label;
+            md += '---\n\n## ' + skillsLabel + '\n\n';
+            d.skills.groups.forEach(g => {
+                md += '### ' + g.title + '\n\n';
+                g.items.forEach(item => md += '- ' + item + '\n');
+                md += '\n';
+            });
+
+            // Certifications
+            const certLabel = d.nav.items.find(i => i.id === 'certifications').label;
+            md += '---\n\n## ' + certLabel + '\n\n';
+            d.certifications.forEach(c => md += '- ' + c.name + '\n');
+
+            // Projects
+            const projLabel = d.nav.items.find(i => i.id === 'projects').label;
+            md += '\n---\n\n## ' + projLabel + '\n\n';
+            d.projects.forEach(p => {
+                md += '### ' + p.title + '\n\n';
+                md += '**' + p.stack + '**  \n\n';
+                md += p.description + '\n\n';
+                if (p.url) md += 'GitHub: <' + p.url + '>\n';
+                if (p.articleUrl) md += 'Article: <' + p.articleUrl + '>\n';
+                md += '\n';
+            });
+
+            // Download
+            const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'Alexis-Carella-CV-' + currentLang.toUpperCase() + '.md';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
         }
 
         // Initial render

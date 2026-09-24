@@ -16,11 +16,15 @@
         .project-card h3 { margin-bottom: 0.25rem; }
         .project-card .subheading { font-size: 0.9rem; margin-bottom: 0.5rem; }
         .project-card ul { margin-top: 0.5rem; }
-        .lang-toggle {
+        .top-actions {
             position: fixed;
             top: 1rem;
             right: 1rem;
             z-index: 1100;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .top-actions button {
             background: #bd5d38;
             border: 1px solid rgba(255,255,255,0.25);
             color: #fff;
@@ -32,14 +36,17 @@
             transition: all 0.2s;
             letter-spacing: 0.02em;
             box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            line-height: 1;
         }
-        .lang-toggle:hover {
+        .top-actions button:hover {
             background: #a84f2f;
         }
         @media (max-width: 991.98px) {
-            .lang-toggle {
+            .top-actions {
                 top: 0.6rem;
                 right: 4rem;
+            }
+            .top-actions button {
                 padding: 0.3rem 0.6rem;
                 font-size: 0.78rem;
             }
@@ -47,7 +54,10 @@
     </style>
 </head>
 <body id="page-top">
-    <button class="lang-toggle" id="langToggle" onclick="switchLanguage()">FR</button>
+    <div class="top-actions">
+        <button id="downloadMD" onclick="downloadMD()" title="Download CV as Markdown"><i class="fas fa-download"></i></button>
+        <button id="langToggle" onclick="switchLanguage()">FR</button>
+    </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
         <a class="navbar-brand js-scroll-trigger" href="../index.html">
@@ -75,6 +85,7 @@
     <script src="../js/scripts.js"></script>
     <script>
     let currentLang = 'en';
+    let resumeData = null;
 
     function detectBrowserLang() {
         const lang = (navigator.language || navigator.userLanguage || 'en').split('-')[0];
@@ -106,6 +117,7 @@
     function renderProjects() {
         const suffix = currentLang === 'fr' ? '-fr' : '-en';
         loadJSON('../data/resume' + suffix + '.json').then(data => {
+            resumeData = data;
             const container = document.getElementById('projectsContent');
             const langData = currentLang === 'fr' ? 'fr' : 'en';
             const backLabel = langData === 'fr' ? '&#8592; Retour au CV' : '&#8592; Back to CV';
@@ -123,6 +135,75 @@
                     (data.projects.indexOf(p) < data.projects.length - 1 ? '<hr class="m-0 mb-4" />' : '')
                 ).join('');
         });
+    }
+
+    function downloadMD() {
+        const d = resumeData;
+        if (!d) return;
+
+        let md = '# ' + d.about.firstName + ' ' + d.about.lastName + '\n\n';
+        md += '**' + d.about.location + '**  \n';
+        md += '<' + d.about.email + '>  \n';
+        md += '[LinkedIn](' + d.about.linkedin + ') | [GitHub](' + d.about.github + ')\n\n';
+        md += d.about.bio + '\n\n---\n\n';
+
+        const expLabel = d.nav.items.find(i => i.id === 'experience').label;
+        md += '## ' + expLabel + '\n\n';
+        d.experience.forEach(job => {
+            md += '### ' + job.title + '\n\n';
+            md += '**' + job.company + '**  \n' + job.period + '\n\n';
+            job.bullets.forEach(b => {
+                const clean = b.replace(/<\/?strong>/g, '**').replace(/<\/?[^>]+>/g, '');
+                md += '- ' + clean + '\n';
+            });
+            md += '\n';
+        });
+
+        md += '---\n\n## ' + d.nav.items.find(i => i.id === 'education').label + '\n\n';
+        d.education.forEach(edu => {
+            md += '### ' + edu.school + '\n\n**' + edu.degree + '**  \n' + edu.detail + '  \n' + edu.period + '\n\n';
+            edu.bullets.forEach(b => md += '- ' + b + '\n');
+            md += '\n';
+        });
+
+        if (d.formations && d.formations.length > 0) {
+            const formLabel = currentLang === 'fr' ? 'Formations professionnelles' : 'Professional Training';
+            md += '### ' + formLabel + '\n\n';
+            d.formations.forEach(f => {
+                md += '**' + f.title + '**  \n' + f.provider + '  \n' + f.detail + '  \n' + f.period + '\n';
+                if (f.url) md += '<' + f.url + '>\n';
+                md += '\n';
+            });
+        }
+
+        const skillsLabel = d.nav.items.find(i => i.id === 'skills').label;
+        md += '---\n\n## ' + skillsLabel + '\n\n';
+        d.skills.groups.forEach(g => {
+            md += '### ' + g.title + '\n\n';
+            g.items.forEach(item => md += '- ' + item + '\n');
+            md += '\n';
+        });
+
+        md += '---\n\n## ' + d.nav.items.find(i => i.id === 'certifications').label + '\n\n';
+        d.certifications.forEach(c => md += '- ' + c.name + '\n');
+
+        const projLabel = d.nav.items.find(i => i.id === 'projects').label;
+        md += '\n---\n\n## ' + projLabel + '\n\n';
+        d.projects.forEach(p => {
+            md += '### ' + p.title + '\n\n**' + p.stack + '**\n\n' + p.description + '\n\n';
+            if (p.url) md += 'GitHub: <' + p.url + '>\n';
+            if (p.articleUrl) md += 'Article: <' + p.articleUrl + '>\n';
+            md += '\n';
+        });
+
+        const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'Alexis-Carella-CV-' + currentLang.toUpperCase() + '.md';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
     }
 
     currentLang = detectBrowserLang();
