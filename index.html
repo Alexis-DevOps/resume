@@ -261,6 +261,7 @@
                             '<div class="subheading text-primary mb-2">' + p.stack + '</div>' +
                             '<p>' + p.description + '</p>' +
                             (p.url ? '<p><a href="' + p.url + '" target="_blank"><i class="fab fa-github"></i> ' + p.urlLabel + '</a></p>' : '') +
+                            (p.articleUrl ? '<p><a href="' + p.articleUrl + '" target="_blank"><i class="fas fa-newspaper"></i> ' + p.articleLabel + '</a></p>' : '') +
                         '</div>' +
                         (data.projects.indexOf(p) < data.projects.length - 1 ? '<hr class="m-0 mb-4" />' : '')
                     ).join('');

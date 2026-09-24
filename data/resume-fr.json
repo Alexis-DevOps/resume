@@ -157,36 +157,20 @@
       "urlLabel": "github.com/Alexis-DevOps/resume"
     },
     {
-      "title": "Infrastructure & Platform Engineering",
-      "stack": "Feel Mining - Kubernetes de production",
-      "description": "Migration de l'infrastructure de production complète d'OVH Public Cloud vers Scaleway Kapsule (2024), incluant les clusters Kubernetes, bases de données et services associés. Piloté par GitOps avec ArgoCD, Kustomize et Sealed Secrets dans 7+ espaces de nommage."
-    },
-    {
-      "title": "Stack d'Observabilité",
-      "stack": "VictoriaMetrics - Prometheus - Grafana - Loki - OpenTelemetry",
-      "description": "Conception et déploiement d'un pipeline d'observabilité complet : collecte de métriques avec VictoriaMetrics et Prometheus, visualisation et alerting avec Grafana / VMAlert vers Teams, agrégation de logs avec OpenTelemetry et Loki pour les applications Laravel, et alerting SMS via Cloudflare Workers."
-    },
-    {
-      "title": "Cloudflare Workers Integrations",
-      "stack": "JavaScript - Webhooks - API Bancaire",
-      "description": "Développement de Cloudflare Workers pour l'orchestration de webhooks et les ponts d'alerting utilisés dans les services financiers et la surveillance d'infrastructure."
-    },
-    {
-      "title": "Pipeline d'Anonymisation RGPD",
-      "stack": "PostgreSQL - Automatisation",
-      "description": "Pipeline automatisé d'anonymisation RGPD pour les bases de données de production, garantissant la conformité avec les réglementations sur la protection des données tout en maintenant l'utilité des données pour les environnements de développement et de test."
-    },
-    {
-      "title": "Études d'Optimisation FinOps",
-      "stack": "Optimisation des Coûts Cloud - 2025 - 2026",
-      "description": "Réalisation de deux études d'optimisation des coûts cloud couvrant le right-sizing, l'achat d'instances réservées et la consolidation des ressources, aboutissant à des réductions mesurables des coûts d'infrastructure."
-    },
-    {
-      "title": "Finobot - Robot Chien ROS2 Open Source",
-      "stack": "ROS2 - Python - CMake",
-      "description": "Packages ROS2 open-source pour le robot chien AI Finobot (basé sur Petoi Bittle X). Permet le suivi autonome de personnes, la navigation et la perception robotique. Contribution aux repositories fino_ros2 et fino_ros2_msgs.",
+      "title": "Finobot - Robot Chien IA",
+      "stack": "ROS2 - Python - Raspberry Pi - Vision par ordinateur",
+      "description": "Projet open-source de robot chien IA basé sur Petoi Bittle X, utilisant Raspberry Pi, ROS2 et la vision par ordinateur pour le suivi autonome de personnes et les commandes vocales. Mis en avant sur le blog officiel de Petoi comme une intégration IA exceptionnelle. Co-créé avec Florian (CPE Lyon).",
       "url": "https://github.com/FinoBot",
-      "urlLabel": "github.com/FinoBot"
+      "urlLabel": "github.com/FinoBot",
+      "articleUrl": "https://www.petoi.com/blogs/blog/finobot-ai-robot-dog-bittle-x-follows-someone",
+      "articleLabel": "Article blog Petoi"
+    },
+    {
+      "title": "Ministack - Émulateur AWS Local",
+      "stack": "Python - Docker - AWS - Terraform",
+      "description": "Contribution à Ministack, un émulateur AWS local gratuit et open-source avec 60+ services, compatibilité Terraform et bases de données réelles. Fork maintenu avec suivi upstream pour assurer la compatibilité avec les API AWS en évolution.",
+      "url": "https://github.com/Alexis-DevOps/ministack",
+      "urlLabel": "github.com/Alexis-DevOps/ministack"
     }
   ]
 }

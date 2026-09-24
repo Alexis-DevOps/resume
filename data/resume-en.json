@@ -157,36 +157,20 @@
       "urlLabel": "github.com/Alexis-DevOps/resume"
     },
     {
-      "title": "Infrastructure & Platform Engineering",
-      "stack": "Feel Mining - Production Kubernetes",
-      "description": "Migration of the entire production infrastructure from OVH Public Cloud to Scaleway Kapsule (2024), including Kubernetes clusters, databases, and associated services. GitOps-driven with ArgoCD, Kustomize, and Sealed Secrets across 7+ namespaces."
-    },
-    {
-      "title": "Observability Stack",
-      "stack": "VictoriaMetrics - Prometheus - Grafana - Loki - OpenTelemetry",
-      "description": "Designed and deployed a full observability pipeline: metrics collection with VictoriaMetrics and Prometheus, visualisation and alerting with Grafana / VMAlert to Teams, log aggregation with OpenTelemetry and Loki for Laravel applications, and SMS alerting via Cloudflare Workers."
-    },
-    {
-      "title": "Cloudflare Workers Integrations",
-      "stack": "JavaScript - Webhooks - Banking API",
-      "description": "Built Cloudflare Workers for webhook orchestration and alerting bridges used in financial services and infrastructure monitoring."
-    },
-    {
-      "title": "GDPR Anonymisation Pipeline",
-      "stack": "PostgreSQL - Automation",
-      "description": "Automated GDPR data anonymisation pipeline for production databases, ensuring compliance with data protection regulations while maintaining data utility for development and testing environments."
-    },
-    {
-      "title": "FinOps Optimisation Studies",
-      "stack": "Cloud Cost Optimisation - 2025 - 2026",
-      "description": "Conducted two cloud cost optimisation studies covering right-sizing, reserved instance purchasing, and resource consolidation, resulting in measurable infrastructure cost reductions."
-    },
-    {
-      "title": "Finobot - Open Source ROS2 Robot Dog",
-      "stack": "ROS2 - Python - CMake",
-      "description": "Open-source ROS2 packages for the Finobot AI robot dog (Petoi Bittle X based). Enables autonomous person-following, navigation, and robot perception. Contributed to the fino_ros2 and fino_ros2_msgs repositories.",
+      "title": "Finobot - AI Robot Dog",
+      "stack": "ROS2 - Python - Raspberry Pi - Computer Vision",
+      "description": "Open-source AI robot dog project built on Petoi Bittle X, using Raspberry Pi, ROS2, and computer vision for autonomous person-following and voice commands. Featured on Petoi's official blog as an exceptional AI integration. Co-created with Florian (CPE Lyon).",
       "url": "https://github.com/FinoBot",
-      "urlLabel": "github.com/FinoBot"
+      "urlLabel": "github.com/FinoBot",
+      "articleUrl": "https://www.petoi.com/blogs/blog/finobot-ai-robot-dog-bittle-x-follows-someone",
+      "articleLabel": "Petoi blog article"
+    },
+    {
+      "title": "Ministack - Local AWS Emulator",
+      "stack": "Python - Docker - AWS - Terraform",
+      "description": "Contributed to Ministack, a free and open-source local AWS emulator with 60+ services, Terraform compatibility, and real databases. Forked and maintained with upstream tracking to keep the project compatible with evolving AWS APIs.",
+      "url": "https://github.com/Alexis-DevOps/ministack",
+      "urlLabel": "github.com/Alexis-DevOps/ministack"
     }
   ]
 }
