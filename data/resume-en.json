@@ -168,9 +168,9 @@
     {
       "title": "Ministack - Local AWS Emulator",
       "stack": "Python - Docker - AWS - Terraform",
-      "description": "Contributed to Ministack, a free and open-source local AWS emulator with 60+ services, Terraform compatibility, and real databases. Forked and maintained with upstream tracking to keep the project compatible with evolving AWS APIs.",
-      "url": "https://github.com/Alexis-DevOps/ministack",
-      "urlLabel": "github.com/Alexis-DevOps/ministack"
+      "description": "Contribute to Ministack, a free and open-source local AWS emulator with 60+ services, Terraform compatibility, and real databases. Fork used for upstream PRs to keep the project compatible with evolving AWS APIs.",
+      "url": "https://github.com/ministackorg/ministack",
+      "urlLabel": "github.com/ministackorg/ministack"
     }
   ]
 }
